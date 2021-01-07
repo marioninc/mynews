@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Writer;
 
-class WriterAPIController extends Controller
+class WriterController extends Controller
 {
     /**
      * Display a listing of the resource.
