@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Writer;
 
 class WriteAPIController extends Controller
 {
@@ -13,7 +14,8 @@ class WriteAPIController extends Controller
      */
     public function index()
     {
-        //
+        $lists = Writer::all();
+        view(json_encode($lists));
     }
 
     /**

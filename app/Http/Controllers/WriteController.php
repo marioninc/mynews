@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Writer;
 
 class WriteController extends Controller
 {
@@ -13,7 +14,8 @@ class WriteController extends Controller
      */
     public function index()
     {
-        //
+        $lists = Writer::all();
+        return view('writer/index', compact('lists'));
     }
 
     /**
