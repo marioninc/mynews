@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Writer;
 
-class WriteController extends Controller
+class WriterAPIController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class WriteController extends Controller
     public function index()
     {
         $lists = Writer::all();
-        return view('writer/index', compact('lists'));
+        view(json_encode($lists));
     }
 
     /**
