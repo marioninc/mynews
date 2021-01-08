@@ -14,8 +14,18 @@ class JpJsonResponse
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle(Request $request, Closure $next)
+    public function handle($request, Closure $next)
     {
-        return $next($request);
+        $response = $next($request);
+        
+        //JSONでない場合はそのまま
+        if (!$response instanceof JsonResponse) {
+            return $response;
+        }
+ 
+        // Unicodeエスケープさせないようにオプションを追加        
+        $response->setEncodingOptions($response->getEncodingOptions() | JSON_UNESCAPED_UNICODE);
+ 
+        return $response;
     }
 }

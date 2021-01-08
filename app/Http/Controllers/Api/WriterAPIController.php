@@ -16,7 +16,7 @@ class WriterAPIController extends Controller
     public function index()
     {
         $lists = Writer::all();
-        return response()->json($lists);
+        return $lists;
     }
 
     /**
