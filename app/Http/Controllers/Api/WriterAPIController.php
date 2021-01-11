@@ -8,11 +8,6 @@ use App\Http\Controllers\Controller;
 
 class WriterAPIController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('JpJsonResponse');
-    }
-    
     /**
      * Display a listing of the resource.
      *
